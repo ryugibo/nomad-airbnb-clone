@@ -11,7 +11,6 @@ class Command(BaseCommand):
         parser.add_argument(
             "--number", default=1, type=int, help="How many users do you want to create"
         )
-        pass
 
     def handle(self, *args, **options):
         number = options.get("number")
