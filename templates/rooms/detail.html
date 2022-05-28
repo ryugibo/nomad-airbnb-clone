@@ -8,5 +8,38 @@ Home
 
 {% block content %}
 
+<div>
+  <h1>{{room.name}}</h1>
+  <h4>{{room.description}}</h4>
+</div>
+
+<div>
+  <h2>By: {{room.host.username}}
+    {% if room.host.superhost %}
+      (superhost)
+    {% endif %}
+  </h2>
+
+  <h3>Amenities</h3>
+  <ul>
+    {% for a in room.amenities.all %}
+      <il>{{a}}</il>
+    {% endfor %}
+  </ul>
+
+  <h3>Facilities</h3>
+  <ul>
+    {% for a in room.facilities.all %}
+      <il>{{a}}</il>
+    {% endfor %}
+  </ul>
+
+  <h3>House Rules</h3>
+  <ul>
+    {% for a in room.house_rules.all %}
+      <il>{{a}}</il>
+    {% endfor %}
+  </ul>
+</div>
 
 {% endblock content %}
