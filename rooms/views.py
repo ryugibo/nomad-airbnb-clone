@@ -21,3 +21,9 @@ class RoomDetail(DetailView):
     """RoomDetail Definition"""
 
     model = models.Room
+
+
+def Search(request):
+    city = request.GET.get("city")
+    city = str.capitalize(city)
+    return render(request, "rooms/search.html", {"city": city})
