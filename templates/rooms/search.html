@@ -68,6 +68,16 @@
     </div>
 
     <div>
+      <label for="instant">Instant Book Only?</label>
+      <input type="checkbox" id="instant" name="instant" {% if instant %} checked {% endif %} />
+    </div>
+
+    <div>
+      <label for="super_host">By Superhost Only?</label>
+      <input type="checkbox" id="super_host" name="super_host" {% if super_host %} checked {% endif %} />
+    </div>
+
+    <div>
       <h3>Amenities</h3>
       <ul>
         {% for amenity in amenities %}
