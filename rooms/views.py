@@ -27,8 +27,22 @@ def Search(request):
     city = str.capitalize(city)
     country = request.GET.get("country", "KR")
     room_type = int(request.GET.get("room_type", 0))
+    price = int(request.GET.get("price", 0))
+    guests = int(request.GET.get("guests", 0))
+    beds = int(request.GET.get("beds", 0))
+    bedrooms = int(request.GET.get("bedrooms", 0))
+    baths = int(request.GET.get("baths", 0))
 
-    form = {"city": city, "s_country": country, "s_room_type": room_type}
+    form = {
+        "city": city,
+        "s_country": country,
+        "s_room_type": room_type,
+        "price": price,
+        "guests": guests,
+        "beds": beds,
+        "bedrooms": bedrooms,
+        "baths": baths,
+    }
 
     room_types = models.RoomType.objects.all()
 
