@@ -67,6 +67,30 @@
       <input type="number" id="baths" name="baths" placeholder="Baths" value="{{baths}}" />
     </div>
 
+    <div>
+      <h3>Amenities</h3>
+      <ul>
+        {% for amenity in amenities %}
+        <li>
+          <label for="a_{{amenity.pk}}">{{amenity.name}}</label>
+          <input type="checkbox" id="a_{{amenity.pk}}" name="amenities" value="{{amenity.pk}}" />
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div>
+      <h3>Facilities</h3>
+      <ul>
+        {% for facility in facilities %}
+        <li>
+          <label for="f_{{facility.pk}}">{{facility.name}}</label>
+          <input type="checkbox" id="f_{{facility.pk}}" name="facilities" value="{{facility.pk}}" />
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
     <button>Search</button>
   </form>
   

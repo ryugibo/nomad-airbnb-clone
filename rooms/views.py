@@ -32,6 +32,10 @@ def Search(request):
     beds = int(request.GET.get("beds", 0))
     bedrooms = int(request.GET.get("bedrooms", 0))
     baths = int(request.GET.get("baths", 0))
+    s_amenities = request.GET.get("amenities")
+    s_facilities = request.GET.get("facilities")
+
+    print(s_amenities, s_facilities)
 
     form = {
         "city": city,
@@ -45,8 +49,15 @@ def Search(request):
     }
 
     room_types = models.RoomType.objects.all()
+    amenities = models.Amenity.objects.all()
+    facilities = models.Facility.objects.all()
 
-    choices = {"countries": countries, "room_types": room_types}
+    choices = {
+        "countries": countries,
+        "room_types": room_types,
+        "amenities": amenities,
+        "facilities": facilities,
+    }
 
     return render(
         request,
